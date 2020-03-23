@@ -1,12 +1,23 @@
-# antenna-db
+antenna-db
+===
+
 A dockerized MySQL 8.0 database based on the one nicely provided by datajoint (https://github.com/datajoint/mysql-docker/).
 
-Create the container using docker-compose while in the repository.
+## Local use (Docker Desktop)
 
-Local installation via:
+Clone the repo
+
+`git clone https://github.com/stephenholtz/antenna-db`
+
+`cd antenna-db`
+
+Create the container using docker-compose
 
 `sudo docker-compose up -d`
 
-Then start container with:
+In the future, start container with:
 
 `docker start antenna_db`
+
+## TODO: Cloud use
+
