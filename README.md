@@ -1,7 +1,7 @@
 antenna-db
 ===
 
-Two ways that I have used to make the SQL database for the `antenna-analysis` [datajoint](https://github.com/datajoint/datajoint-python] based) based analysis pipeline. 
+Two ways that I have used to make the SQL database for the `antenna-analysis` [datajoint](https://github.com/datajoint/datajoint-python) based analysis pipeline. 
 
 1. Dockerized on a local machine
 2. Google Cloud SQL
