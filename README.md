@@ -32,6 +32,20 @@ This is a dead simple configuration where all the management (disk expansion, ba
 - Choose MySQL, and pick the Region and Zone where the cloud storage container is located
     - This Region and Zone also need to be used for Notebooks and Compute Engine VMs so they can access without further configuration.
 - Advanced configuration options can mostly be changed later.
+
+Set these database flags through the console or with the `gcloud` utility and `--database-flags`
+```
+max_allowed_packet=1073741824
+innodb_log_file_size=4294967296
+innodb_file_per_table=1
+innodb_stats_on_metadata=0
+wait_timeout=172800
+interactive_timeout=172800
+net_read_timeout=7200
+net_write_timeout=7200
+lock_wait_timeout=3600
+innodb_lock_wait_timeout=3600
+```
     
 ### Connect with Public IP Address (for temporary testing):
 - To allow VMs to access this database, their IP address needs to be added as an Authorized Network.
