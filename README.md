@@ -1,5 +1,17 @@
-antenna-db
+antenna-data
 ===
+
+Notes and configuration files to docment how data and databases are handled for the antenna-analysis project.
+
+
+## AWS Installation
+- Migrating to AWS after running into a few compatibility issues and poor community support. DataJoint also currently supports s3 stores and the latency is dramatically lower.
+- original [s3 sync](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/sync.html) from ephys rig backup:
+  - `aws s3 sync D:\antenna-fs\ s3://antenna-fs
+- using `rclone sync` [command](https://rclone.org/commands/rclone_sync/) with a profile `antenna-aws` set up with aws credentials:
+  - From s3 to local `rclone sync antenna-aws:antenna-fs ~/data/antenna-fs -P `
+  - From local to s3 `rclone sync ~/data/antenna-fs antenna-aws:antenna-fs -P --exclude-from sync_exclude.txt`
+- deleting files with rclone etc., is required if they get caught outside of the filtering rules in `--exclude-from`
 
 Two ways that I have used to make the SQL database for the `antenna-analysis` [datajoint](https://github.com/datajoint/datajoint-python) based analysis pipeline. 
 
