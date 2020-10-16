@@ -1,0 +1,24 @@
+# s3 bucket used by database
+db/
+
+# OSX
+.DS_Store
+.metadata
+.localized
+.com.apple.timemachine.supported
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*.lnk
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
