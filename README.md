@@ -4,6 +4,10 @@ antenna-data
 Notes and configuration files to docment how data and databases are handled for the antenna-analysis project.
 
 
+## Amazon RDS
+Temporary note as png before better documenting my MariaDB settings
+
+
 ## AWS Installation
 - Migrating to AWS after running into a few compatibility issues and poor community support. DataJoint also currently supports s3 stores and the latency is dramatically lower.
 - original [s3 sync](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/sync.html) from ephys rig backup:
