@@ -1,5 +1,7 @@
 # s3 bucket used by database
 db/
+# s3 bucket used for figures
+figures/
 
 # OSX
 .DS_Store
