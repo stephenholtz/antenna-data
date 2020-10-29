@@ -1,2 +1,4 @@
 #!/bin/bash
-rclone cmount antenna-aws:antenna-fs/figures/ ~/figures/ --daemon --no-modtime
+mkdir -p ~/figures/
+# via brew install s3fs
+s3fs antenna-fs:/figures ~/figures
