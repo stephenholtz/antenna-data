@@ -29,7 +29,6 @@ Notes and configuration files to document how data and databases are handled for
       - `rclone sync ~/data/antenna-fs antenna-aws:antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
   - always use `--dry-run` first!
 - Using `rclone copy` to get a windows backup. Assumes running from the directory with the `rclone` executable.
-- Using `rclone copy` to get a windows backup. Assumes running from the directory with the `rclone` executable.
   - **FROM s3; TO: local windows backup:**
       - `rclone copy antenna-aws:antenna-fs D:\antenna-fs -P --exclude-from ..\antenna-data\sync_exclude.txt`
       - Then move over to the med school fileserver.
