@@ -22,16 +22,20 @@ Notes and configuration files to document how data and databases are handled for
 - Appropriate AWS credentials are required to configure a profile. Mine is named `antenna-aws`.
 - `sync_exclude.txt` has standard filesystem-specific files to exclude (a la .gitignore) in addition to the database-managed folders.
 - Deleting files with rclone etc., is required if they get caught outside of the filtering rules in `--exclude-from`
-- using `rclone sync` [command](https://rclone.org/commands/rclone_sync/) with profile `antenna-aws`:
-  - **FROM: s3; TO: local (macbook):**  e.g. for backup
-      - `rclone sync antenna-aws:antenna-fs ~/data/antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
-  - **FROM: local (macbook); TO: s3:**  e.g. post metadata fixes
-      - `rclone sync ~/data/antenna-fs antenna-aws:antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
-  - always use `--dry-run` first!
-- Using `rclone copy` to get a windows backup. Assumes running from the directory with the `rclone` executable.
-  - **FROM s3; TO: local windows backup:**
-      - `rclone copy antenna-aws:antenna-fs D:\antenna-fs -P --exclude-from ..\antenna-data\sync_exclude.txt`
-      - Then move over to the med school fileserver.
+- NOTE: always use `--dry-run` first!
+
+## Sync/backup with `rclone sync` [command](https://rclone.org/commands/rclone_sync/) or `rclone copy` [command](https://rclone.org/commands/rclone_copy/) and profile `antenna-aws`: 
+- **FROM: s3; TO: local (macbook):**  e.g. for backup
+    - `rclone sync antenna-aws:antenna-fs ~/data/antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
+- **FROM: local (macbook); TO: s3:**  e.g. post metadata fixes
+    - `rclone sync ~/data/antenna-fs antenna-aws:antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
+- **FROM s3; TO: local windows backup:**
+    - `rclone copy antenna-aws:antenna-fs D:\antenna-fs -P --exclude-from ..\antenna-data\sync_exclude.txt`
+    - Then move over to the med school fileserver.
+
+## Push data to cloud with `rclone copy`. Assumes running from the directory with the `rclone` executable.
+  - `rclone copy F:\ephys_data\ antenna-aws:antenna-fs/raw -P --exclude-from ..\antenna-data\sync_exclude.txt --dry-run`
+  - And move a copy to the med school fileserver.
 
 ## Mounting s3 or syncing for figure sharing:
 - Using `s3fs` mount (via brew install s3fs)
