@@ -24,7 +24,7 @@ Notes and configuration files to document how data and databases are handled for
 - Deleting files with rclone etc., is required if they get caught outside of the filtering rules in `--exclude-from`
 - NOTE: always use `--dry-run` first!
 
-## Sync/backup with `rclone sync` [command](https://rclone.org/commands/rclone_sync/) or `rclone copy` [command](https://rclone.org/commands/rclone_copy/) and profile `antenna-aws`: 
+### Sync/backup with `rclone sync` [command](https://rclone.org/commands/rclone_sync/) or `rclone copy` [command](https://rclone.org/commands/rclone_copy/) and profile `antenna-aws`: 
 - **FROM: s3; TO: local (macbook):**  e.g. for backup
     - `rclone sync antenna-aws:antenna-fs ~/data/antenna-fs -P --exclude-from sync_exclude.txt --dry-run`
 - **FROM: local (macbook); TO: s3:**  e.g. post metadata fixes
@@ -33,7 +33,7 @@ Notes and configuration files to document how data and databases are handled for
     - `rclone copy antenna-aws:antenna-fs D:\antenna-fs -P --exclude-from ..\antenna-data\sync_exclude.txt`
     - Then move over to the med school fileserver.
 
-## Push data to cloud with `rclone copy`. Assumes running from the directory with the `rclone` executable.
+### Push data to cloud with `rclone copy`. Assumes running from the directory with the `rclone` executable.
   - `rclone copy F:\ephys_data\ antenna-aws:antenna-fs/raw -P --exclude-from ..\antenna-data\sync_exclude.txt --dry-run`
   - And move a copy to the med school fileserver.
 
