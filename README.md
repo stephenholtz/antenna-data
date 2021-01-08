@@ -10,7 +10,7 @@ Notes and configuration files to document how data and databases are handled for
 │   ├── db                  # folders used as cloud stores for datajoint database
 │   │   ├── analysis        #
 │   │   └── stimuli         #
-│   ├── cull                # experiments that are not used in final analysis
+│   ├── cull                # experiments that are saved but not used in database
 │   │   └── exp_ephys_...   #
 │   ├── raw                 # experiments that are/will be imported into database
 │   │    └── exp_ephys_...  #
