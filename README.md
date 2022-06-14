@@ -1,5 +1,6 @@
-antenna-data
+antenna-data (retired)
 ===
+*Note this documentation is now outdated, newer instructions are part of the analysis and stimulus generation repository, here for public reference.*
 
 Notes and configuration files to document how data and databases are handled for the antenna-analysis project. Raw data is stored on an AWS s3 bucket and backed up as needed to a managed fileserver at Harvard Med School and a personal fileserver. Processing pipelines are provided via [datajoint](https://github.com/datajoint/), and the required SQL database is hosted on (currently) on Amazon via Amazon RDS. Some notes for previous setup using google cloud are below.
 
